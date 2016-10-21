@@ -9,6 +9,6 @@ package assassination_airport;
  *
  * @author Studenti
  */
-public class Aeroporto {
-    //Map di compagnie
+public class Compagnia {
+    //ArrayList Volit
 }

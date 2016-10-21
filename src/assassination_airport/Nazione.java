@@ -9,6 +9,6 @@ package assassination_airport;
  *
  * @author Studenti
  */
-public class Aeroporto {
-    //Map di compagnie
+public class Nazione {
+    //MAP di Areoporti
 }
