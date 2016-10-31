@@ -46,9 +46,11 @@ public class Nazione {
     
     public void print(){
         System.out.println("Nazione: "+this.nome);
-
+        
+        //lambda expression per stampare il contenuto dell'array associativo ( quanto sono fighe ste funzioni :333 )
         aeroporti.forEach((String s, Aeroporto a) -> {
             System.out.println("\tNome: "+a.nome);
+            a.printVoli();
                 });
     }
 }

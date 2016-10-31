@@ -128,7 +128,11 @@ public class GUI extends JFrame{
         
         aggiungi.addActionListener((ActionEvent e) -> {
             //System.out.println(assoc_nazioni.get(nazioni.getSelectedItem()).nome);
-            assoc_nazioni.get(nazioni.getSelectedItem()).print();
+            Volo temp = new Volo(codice.getText(),(String)compagnia.getSelectedItem(),destinazione.getText(),data.getText());
+            assoc_nazioni.get(nazioni.getSelectedItem()).aeroporti.get(aeroporto.getSelectedItem()).addVolo(temp);
+            assoc_nazioni.forEach((String s, Nazione a) -> {
+                a.print();
+            });
         });
     }
     
