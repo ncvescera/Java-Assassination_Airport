@@ -5,6 +5,7 @@
  */
 package assassination_airport;
 
+import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -22,6 +23,7 @@ import javax.swing.JTextField;
  * @author Nicolò Vescera
  */
 public class GUI extends JFrame{
+    JPanel      top_insert;
     JPanel      insert;
     
     //Dichiarazione JLables
@@ -45,6 +47,7 @@ public class GUI extends JFrame{
   
     
     public GUI(){
+        top_insert = new JPanel(new GridLayout(1,2));
         insert = new JPanel(new GridLayout(6,2));
         
         lab_nazioni = new JLabel("Nazione: ");
@@ -66,6 +69,9 @@ public class GUI extends JFrame{
         lab_codice = new JLabel("Codice: ");
         codice = new JTextField(20);
         
+        aggiungi = new JButton("Aggiungi !");
+        aggiungi.setFont(new Font("Arial", Font.PLAIN, 40));
+        
         insert.add(lab_nazioni);
         insert.add(nazioni);
         insert.add(lab_aeroporto);
@@ -78,10 +84,13 @@ public class GUI extends JFrame{
         insert.add(data);
         insert.add(lab_codice);
         insert.add(codice);
+       
+        top_insert.add(insert);
+        top_insert.add(aggiungi);
         
         addActionListener();
         
-        this.add(insert,"North");
+        this.add(top_insert,"North");
         this.setVisible(true);
         this.setSize(500,200);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
