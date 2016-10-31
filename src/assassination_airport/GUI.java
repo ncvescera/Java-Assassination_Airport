@@ -8,6 +8,7 @@ package assassination_airport;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Arrays;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
@@ -28,7 +29,7 @@ public class GUI extends JFrame{
     
     JLabel      lab_nazioni;
     JLabel      lab_aeroporto;
-    
+    JLabel      lab_compagnia;
     JComboBox   nazioni; // array associativo per nome-nazione oggetto-nazione GUARDARE MAP
     JComboBox   aeroporto;
     JComboBox   compagnia;
@@ -46,10 +47,15 @@ public class GUI extends JFrame{
         lab_aeroporto = new JLabel("Aeroporto: ");
         aeroporto = new JComboBox(Database.areoporto_ICE);
         
+        lab_compagnia = new JLabel("Compagnia aerea:");
+        compagnia = new JComboBox(Database.compagnie_ICE);
+        
         insert.add(lab_nazioni);
         insert.add(nazioni);
         insert.add(lab_aeroporto);
         insert.add(aeroporto);
+        insert.add(lab_compagnia);
+        insert.add(compagnia);
         
         addActionListener();
         
@@ -68,19 +74,23 @@ public class GUI extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 String cmd = (String)nazioni.getSelectedItem();
-                System.out.println(cmd);
+                
                 switch(cmd){
                     case "Islanda":
                         aeroporto.setModel(new DefaultComboBoxModel(Database.areoporto_ICE));
+                        compagnia.setModel(new DefaultComboBoxModel(Database.compagnie_ICE));
                         break;
                     case "Finalndia":
                         aeroporto.setModel(new DefaultComboBoxModel(Database.areoporto_FIN));
+                        compagnia.setModel(new DefaultComboBoxModel(Database.compagnie_FIN));
                         break;
                     case "Italia":
                         aeroporto.setModel(new DefaultComboBoxModel(Database.areoporto_ITA));
+                        compagnia.setModel(new DefaultComboBoxModel(Database.compagnie_ITA));
                         break;
                     case "Germania":
                         aeroporto.setModel(new DefaultComboBoxModel(Database.areoporto_GER));
+                        compagnia.setModel(new DefaultComboBoxModel(Database.compagnie_GER));
                         break;
                 }   
             }
