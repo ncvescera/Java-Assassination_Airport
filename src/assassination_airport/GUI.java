@@ -51,7 +51,7 @@ public class GUI extends JFrame{
     Map<String, Nazione> assoc_nazioni;
     
     public GUI(Map assoc_nazioni){
-        assoc_nazioni = assoc_nazioni;
+        this.assoc_nazioni = assoc_nazioni;
         
         //inizializzazione pennelli per inserimento dati
         top_insert = new JPanel(new GridLayout(1,2));
@@ -149,6 +149,7 @@ public class GUI extends JFrame{
         */
         aggiungi.addActionListener((ActionEvent e) -> {
             //Creazione del volo
+            System.out.println(codice.getText()+" "+(String)compagnia.getSelectedItem()+" "+destinazione.getText()+" "+data.getText());
             Volo temp = new Volo(codice.getText(),(String)compagnia.getSelectedItem(),destinazione.getText(),data.getText());
             //Aggiunta del volo al relativo oggetto scelto tramite interfaccia grafica
             assoc_nazioni.get(nazioni.getSelectedItem()).aeroporti.get(aeroporto.getSelectedItem()).addVolo(temp);
