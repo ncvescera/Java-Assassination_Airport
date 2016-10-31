@@ -9,6 +9,7 @@ import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Map;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -45,14 +46,15 @@ public class GUI extends JFrame{
     
     JButton     aggiungi;
   
-    
-    public GUI(){
+    Map<String, Nazione> assoc_nazioni;
+    public GUI(Map assoc_nazioni){
+        this.assoc_nazioni = assoc_nazioni;
+        
         top_insert = new JPanel(new GridLayout(1,2));
         insert = new JPanel(new GridLayout(6,2));
         
         lab_nazioni = new JLabel("Nazione: ");
-        nazioni = new JComboBox(Database.box_nazioni);
-        
+        nazioni = new JComboBox(Database.nazioni);
         
         lab_aeroporto = new JLabel("Aeroporto: ");
         aeroporto = new JComboBox(Database.areoporto_ICE);
@@ -101,30 +103,32 @@ public class GUI extends JFrame{
          * ACTION LISTENER NAZIONI
          * In base al contenuto di nazioni modifica il contenuto di aeroporto
         */
-        nazioni.addActionListener(new ActionListener () {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                String cmd = (String)nazioni.getSelectedItem();
-                
-                switch(cmd){
-                    case "Islanda":
-                        aeroporto.setModel(new DefaultComboBoxModel(Database.areoporto_ICE));
-                        compagnia.setModel(new DefaultComboBoxModel(Database.compagnie_ICE));
-                        break;
-                    case "Finalndia":
-                        aeroporto.setModel(new DefaultComboBoxModel(Database.areoporto_FIN));
-                        compagnia.setModel(new DefaultComboBoxModel(Database.compagnie_FIN));
-                        break;
-                    case "Italia":
-                        aeroporto.setModel(new DefaultComboBoxModel(Database.areoporto_ITA));
-                        compagnia.setModel(new DefaultComboBoxModel(Database.compagnie_ITA));
-                        break;
-                    case "Germania":
-                        aeroporto.setModel(new DefaultComboBoxModel(Database.areoporto_GER));
-                        compagnia.setModel(new DefaultComboBoxModel(Database.compagnie_GER));
-                        break;
-                }   
+        nazioni.addActionListener((ActionEvent e) -> {
+            String cmd = (String)nazioni.getSelectedItem();
+            
+            switch(cmd){
+                case "Islanda":
+                    aeroporto.setModel(new DefaultComboBoxModel(Database.areoporto_ICE));
+                    compagnia.setModel(new DefaultComboBoxModel(Database.compagnie_ICE));
+                    break;
+                case "Finalndia":
+                    aeroporto.setModel(new DefaultComboBoxModel(Database.areoporto_FIN));
+                    compagnia.setModel(new DefaultComboBoxModel(Database.compagnie_FIN));
+                    break;
+                case "Italia":
+                    aeroporto.setModel(new DefaultComboBoxModel(Database.areoporto_ITA));
+                    compagnia.setModel(new DefaultComboBoxModel(Database.compagnie_ITA));
+                    break;
+                case "Germania":
+                    aeroporto.setModel(new DefaultComboBoxModel(Database.areoporto_GER));
+                    compagnia.setModel(new DefaultComboBoxModel(Database.compagnie_GER));
+                    break;   
             }
+        });
+        
+        aggiungi.addActionListener((ActionEvent e) -> {
+            //System.out.println(assoc_nazioni.get(nazioni.getSelectedItem()).nome);
+            assoc_nazioni.get(nazioni.getSelectedItem()).print();
         });
     }
     

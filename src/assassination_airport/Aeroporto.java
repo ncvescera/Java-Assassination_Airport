@@ -10,7 +10,10 @@ package assassination_airport;
  * @author Studenti
  */
 public class Aeroporto {
-    public String citta;
-    public String codice;
+    public String nome;
     //Map di compagnie
+    
+    public Aeroporto(String nome){
+        this.nome = nome;
+    }
 }

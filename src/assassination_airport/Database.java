@@ -10,7 +10,7 @@ package assassination_airport;
  * @author ncvescera
  */
 public class Database {
-    static public final String[] box_nazioni   = {"Islanda","Finalndia","Italia","Germania"};
+    static public final String[] nazioni   = {"Islanda","Finalndia","Italia","Germania"};
     
     static public final String[] areoporto_ITA = {"Fiumicino","Malpensa"};
     static public final String[] compagnie_ITA = {"Alitalia","ItaliaVoliamo"};
