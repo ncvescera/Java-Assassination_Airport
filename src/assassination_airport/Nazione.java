@@ -1,25 +1,21 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package assassination_airport;
 
 import java.util.HashMap;
 import java.util.Map;
 
 /**
- *
- * @author Studenti
+ * 
+ * @author Nicolò Vescera
  */
 public class Nazione {
-    //MAP di Areoporti
     public String nome;
     public Map<String, Aeroporto> aeroporti;
     
     public Nazione(String nome){
         this.nome = nome;
         this.aeroporti = new HashMap<>();
+        
+        //inizializzazione dell'array aeroporti
         switch(this.nome){
             case "Islanda":
                 for(String aeroporto:Database.areoporto_ICE){
@@ -51,6 +47,6 @@ public class Nazione {
         aeroporti.forEach((String s, Aeroporto a) -> {
             System.out.println("\tNome: "+a.nome);
             a.printVoli();
-                });
+        });
     }
 }

@@ -1,13 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package assassination_airport;
 
 /**
- *
- * @author ncvescera
+ * Classe che contiene tutti i dati necessari per creare le nazioni e gli aeroporti
+ * @author Nicolò Vescera
  */
 public class Database {
     static public final String[] nazioni   = {"Islanda","Finalndia","Italia","Germania"};

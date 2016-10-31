@@ -1,15 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package assassination_airport;
 
 import java.util.ArrayList;
 
 /**
  *
- * @author Studenti
+ * @author Nicolò Vescera
  */
 public class Aeroporto {
     public String           nome;

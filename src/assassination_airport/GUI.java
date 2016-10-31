@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package assassination_airport;
 
 import java.awt.Font;
@@ -116,9 +111,9 @@ public class GUI extends JFrame{
     }
 
     private void addActionListener(){
-        /* 
-         * ACTION LISTENER NAZIONI
-         * In base al contenuto di nazioni modifica il contenuto di aeroporto
+        /*
+            ACTION LISTENER NAZIONI
+            In base al contenuto di nazioni modifica il contenuto di aeroporto
         */
         nazioni.addActionListener((ActionEvent e) -> {
             String cmd = (String)nazioni.getSelectedItem();
