@@ -8,33 +8,40 @@ package assassination_airport;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Arrays;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-import javax.swing.ListSelectionModel;
-import javax.swing.SwingUtilities;
-import javax.swing.event.ListSelectionEvent;
-import javax.swing.event.ListSelectionListener;
+
 
 /**
  *
- * @author Studenti
+ * @author Nicolò Vescera
  */
 public class GUI extends JFrame{
     JPanel      insert;
     
+    //Dichiarazione JLables
     JLabel      lab_nazioni;
     JLabel      lab_aeroporto;
     JLabel      lab_compagnia;
+    JLabel      lab_destinazione;
+    JLabel      lab_data;
+    JLabel      lab_codice;
+    
+    //Dichiarazioni JComboBoxes
     JComboBox   nazioni; // array associativo per nome-nazione oggetto-nazione GUARDARE MAP
     JComboBox   aeroporto;
     JComboBox   compagnia;
     
     JTextField  destinazione;
+    JTextField  data;
+    JTextField  codice;
+    
+    JButton     aggiungi;
   
     
     public GUI(){
@@ -50,24 +57,39 @@ public class GUI extends JFrame{
         lab_compagnia = new JLabel("Compagnia aerea:");
         compagnia = new JComboBox(Database.compagnie_ICE);
         
+        lab_destinazione = new JLabel("Destinazione: ");
+        destinazione = new JTextField(20);
+        
+        lab_data = new JLabel("Data: ");
+        data = new JTextField(20);
+        
+        lab_codice = new JLabel("Codice: ");
+        codice = new JTextField(20);
+        
         insert.add(lab_nazioni);
         insert.add(nazioni);
         insert.add(lab_aeroporto);
         insert.add(aeroporto);
         insert.add(lab_compagnia);
         insert.add(compagnia);
+        insert.add(lab_destinazione);
+        insert.add(destinazione);
+        insert.add(lab_data);
+        insert.add(data);
+        insert.add(lab_codice);
+        insert.add(codice);
         
         addActionListener();
         
         this.add(insert,"North");
         this.setVisible(true);
-        this.pack();
+        this.setSize(500,200);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
     private void addActionListener(){
         /* 
-         * Action listener di nazioni  
+         * ACTION LISTENER NAZIONI
          * In base al contenuto di nazioni modifica il contenuto di aeroporto
         */
         nazioni.addActionListener(new ActionListener () {
