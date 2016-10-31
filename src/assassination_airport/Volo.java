@@ -10,10 +10,10 @@ package assassination_airport;
  * @author Studenti
  */
 public class Volo {
-    private int         codice_volo;
-    private String      compagnia;
-    private String      destinazione;
-    private String      data;
+    private String codice_volo;
+    private String compagnia;
+    private String destinazione;
+    private String data;
     
     
 }

@@ -10,5 +10,7 @@ package assassination_airport;
  * @author Studenti
  */
 public class Aeroporto {
+    public String citta;
+    public String codice;
     //Map di compagnie
 }

@@ -16,6 +16,7 @@ public class Assassination_Airport {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        new GUI();
     }
     
 }
