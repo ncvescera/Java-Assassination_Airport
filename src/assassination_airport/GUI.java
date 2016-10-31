@@ -34,23 +34,17 @@ public class GUI extends JFrame{
     JComboBox   compagnia;
     
     JTextField  destinazione;
-    
-    String[] box_nazioni = {"Islanda","Finalndia","Italia","Germania"};
-    
-    String[] areoporto_ITA = {"Fiumicino","Malpensa"};
-    String[] areoporto_FIN = {"Tervettuola","Liukkumakkyi"};
-    String[] areoporto_GER = {"Gherfrung","Rammstain"};
-    String[] areoporto_ICE = {"Rekydottir","Siguriondottir"};
+  
     
     public GUI(){
         insert = new JPanel(new GridLayout(6,2));
         
         lab_nazioni = new JLabel("Nazione: ");
-        nazioni = new JComboBox(box_nazioni);
+        nazioni = new JComboBox(Database.box_nazioni);
         
         
         lab_aeroporto = new JLabel("Aeroporto: ");
-        aeroporto = new JComboBox(areoporto_ICE);
+        aeroporto = new JComboBox(Database.areoporto_ICE);
         
         insert.add(lab_nazioni);
         insert.add(nazioni);
@@ -77,20 +71,18 @@ public class GUI extends JFrame{
                 System.out.println(cmd);
                 switch(cmd){
                     case "Islanda":
-                        aeroporto.setModel(new DefaultComboBoxModel(areoporto_ICE));
+                        aeroporto.setModel(new DefaultComboBoxModel(Database.areoporto_ICE));
                         break;
                     case "Finalndia":
-                        aeroporto.setModel(new DefaultComboBoxModel(areoporto_FIN));
+                        aeroporto.setModel(new DefaultComboBoxModel(Database.areoporto_FIN));
                         break;
                     case "Italia":
-                        aeroporto.setModel(new DefaultComboBoxModel(areoporto_ITA));
+                        aeroporto.setModel(new DefaultComboBoxModel(Database.areoporto_ITA));
                         break;
                     case "Germania":
-                        aeroporto.setModel(new DefaultComboBoxModel(areoporto_GER));
+                        aeroporto.setModel(new DefaultComboBoxModel(Database.areoporto_GER));
                         break;
                 }   
-                
-                //SwingUtilities.updateComponentTreeUI(GUI.this);
             }
         });
     }
