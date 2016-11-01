@@ -1,6 +1,7 @@
 package assassination_airport;
 
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -16,10 +17,14 @@ public class Aeroporto {
     }
     
     public void addVolo(Volo nuovo){
-        if(nuovo != null)
+        if(nuovo != null && !nuovo.codice_volo.equals("") && !nuovo.compagnia.equals("") && !nuovo.data.equals("") && !nuovo.destinazione.equals("")){
             this.voli.add(nuovo);
-        else
+            JOptionPane.showMessageDialog(null, "Volo aggiunto correttamente :D");
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "C'è stato un errore, impossibile aggiungere il volo :/");
             System.err.println("Errore! Null.pointer.exception!");
+        }
     }
     
     public void printVoli(){
