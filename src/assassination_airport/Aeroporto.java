@@ -38,7 +38,6 @@ public class Aeroporto {
                 if(elem.codice_volo.equals(nuovo.codice_volo) || elem.data.equals(nuovo.data) && elem.compagnia.equals(nuovo.compagnia)  && elem.destinazione.equals(nuovo.destinazione)){
                     return false;
                 }
-
             }
         }
         
@@ -46,12 +45,14 @@ public class Aeroporto {
         return true;
     }
     
+    //stampa dei voli
     public void printVoli(){
         for(Volo volo:this.voli){
             volo.print();
         }
     }
     
+    //metodo che ritorna un arraylist con tutti i voli che hanno il codice uguale a quello passatogli
     public ArrayList cercaPerCodice(String codice){
         ArrayList<Volo> result = new ArrayList();
         
@@ -63,6 +64,7 @@ public class Aeroporto {
         return result;
     }
     
+    //metodo che ritorna un arraylist con tutti i voli che hanno la destinazione uguale a quello passatogli
     public ArrayList cercaPerDestinazione(String codice){
         ArrayList<Volo> result = new ArrayList();
         

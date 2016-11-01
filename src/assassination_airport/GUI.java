@@ -36,6 +36,7 @@ public class GUI extends JFrame{
     //labels per la ricerca
     JLabel      lab_search_codice;
     JLabel      lab_search_destinazione;
+    
     //Dichiarazioni JComboBoxes
     JComboBox   nazioni;
     JComboBox   aeroporto;
@@ -121,16 +122,20 @@ public class GUI extends JFrame{
         insert.add(lab_codice);
         insert.add(codice);
        
+        //aggiunta degli elementi al panel PANEL_SEARCH_CODICE
         panel_search_codice.add(lab_search_codice);
         panel_search_codice.add(search_codice);
         panel_search_codice.add(btn_search_codice);
         
+        //aggiunta degli elementi al panel PANEL_SEARCH_DESTINAZIONE
         panel_search_destinazione.add(lab_search_destinazione);
         panel_search_destinazione.add(search_destinazione);
         panel_search_destinazione.add(btn_search_destinazione);
+        
         //aggiunta gegli elementi al panel SEARCH
         search.add(panel_search_codice);
         search.add(panel_search_destinazione);
+        
         //aggiunta del panel INSERT al panel TOP_INSERT
         top_insert.add(insert);
         top_insert.add(aggiungi);
@@ -141,6 +146,7 @@ public class GUI extends JFrame{
         //aggiunta del panle TOP_INSERT al FRAME
         this.add(top_insert,"North");
         this.add(search,"Center");
+        
         //set dei valori principali del frame
         this.setVisible(true);
         this.setSize(700,250);
