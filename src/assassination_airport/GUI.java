@@ -195,14 +195,14 @@ public class GUI extends JFrame{
             ACTION LISTENER CERCA CODICE
         */
         btn_search_codice.addActionListener((ActionEvent e) -> {
-            //invoco metodo di ricerca
+            Cerca.codice(assoc_nazioni, search_codice.getText());
         });
         
         /*
             ACTION LISTENER CERCA DESTINAZIONE
         */
         btn_search_destinazione.addActionListener((ActionEvent e) -> {
-            //invoco metodo di ricerca
+            Cerca.destinazione(assoc_nazioni, search_destinazione.getText());
         });
     }
     

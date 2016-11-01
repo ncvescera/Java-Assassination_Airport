@@ -51,4 +51,26 @@ public class Aeroporto {
             volo.print();
         }
     }
+    
+    public ArrayList cercaPerCodice(String codice){
+        ArrayList<Volo> result = new ArrayList();
+        
+        for(Volo elem:this.voli){
+            if(elem.codice_volo.equals(codice))
+                result.add(elem);
+        }
+        
+        return result;
+    }
+    
+    public ArrayList cercaPerDestinazione(String codice){
+        ArrayList<Volo> result = new ArrayList();
+        
+        for(Volo elem:this.voli){
+            if(elem.destinazione.equals(codice))
+                result.add(elem);
+        }
+        
+        return result;
+    }
 }
