@@ -33,16 +33,14 @@ public class Aeroporto {
     
     //funzione per controllare che non ci siano 2 voli uguali
     private boolean checkVolo(Volo nuovo){
-        boolean add = false;
         if(!this.voli.isEmpty()){
             for(Volo elem:this.voli){
                 if(elem.codice_volo.equals(nuovo.codice_volo) || elem.data.equals(nuovo.data) && elem.compagnia.equals(nuovo.compagnia)  && elem.destinazione.equals(nuovo.destinazione)){
                     return false;
                 }
-                else
-                    return true;
-                }
+
             }
+        }
         
         //altrimenti 
         return true;
