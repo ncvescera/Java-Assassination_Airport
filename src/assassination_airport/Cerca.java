@@ -29,7 +29,10 @@ public class Cerca {
             }
         }
         
-        JOptionPane.showMessageDialog(null, stampa);
+        if(stampa.equals(""))
+            JOptionPane.showMessageDialog(null, "Nessun volo torvato :/");
+        else
+            JOptionPane.showMessageDialog(null, stampa);
         
     }
     
@@ -54,6 +57,9 @@ public class Cerca {
             }
         }
         
-        JOptionPane.showMessageDialog(null, stampa);
+        if(stampa.equals(""))
+            JOptionPane.showMessageDialog(null, "Nessun volo torvato :/");
+        else
+            JOptionPane.showMessageDialog(null, stampa);
     }
 }
